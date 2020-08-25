@@ -1,0 +1,19 @@
+{
+  "name": "extend-rest-api-post",
+  "version": "1.1.0",
+  "description": "Plugin WordPress qui étend l'API REST pour permettre d'ajouter le nom de l'auteur, son avatar, et l'image à la une au json des types de postplugin WordPress qui ajoute une interface au tableau de bord pour pouvoir ajouter le nom de l'auteur, l'URL de son avatar et les URL de l'image à la une dans le retour de l'API REST pour chaque type de post publique",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./assets/sass/main.scss:./assets/css/style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JuCreanet/Extend-REST-API-Post.git"
+  },
+  "author": "Julia Galindo",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/JuCreanet/Extend-REST-API-Post/issues"
+  },
+  "homepage": "https://github.com/JuCreanet/Extend-REST-API-Post#readme"
+}

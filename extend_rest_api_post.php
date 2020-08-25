@@ -10,7 +10,7 @@
 * Plugin URI:  https://github.com/JuCreanet/Extend-REST-API-Post
 * Description:  Ajoute une page au tableau de bord pour pouvoir ajouter le nom de l'auteur, l'URL de son avatar
 et les URL de l'image à la une dans le retour de l'API REST pour chaque type de post publique
-* Version:      1.0.0
+* Version:      1.1.0
 * Author:       Julia Galindo
 * Author URI:   https://www.creanet.fr/
 * Text Domain:  extend-rest-api-post

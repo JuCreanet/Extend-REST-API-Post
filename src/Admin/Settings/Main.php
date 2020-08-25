@@ -79,7 +79,7 @@ if ( ! class_exists( Main::class ) ) {
 			// CSS pour la page des options.
 			wp_enqueue_style(
 				PluginData::get_asset_handle( 'admin-settings' ),
-				PluginData::plugin_dir_url() . 'admin/css/style.css',
+				PluginData::plugin_dir_url() . 'assets/css/style.css',
 				[
 					'wp-components',
 				],
@@ -90,7 +90,7 @@ if ( ! class_exists( Main::class ) ) {
 			// JS pour la page des options.
 			wp_enqueue_script(
 				PluginData::get_asset_handle( 'admin-settings' ),
-				PluginData::plugin_dir_url() . 'admin/js/main.js',
+				PluginData::plugin_dir_url() . 'assets/js/main.js',
 				[
 					'wp-api',
 					'wp-i18n',

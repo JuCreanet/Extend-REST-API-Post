@@ -1,0 +1,47 @@
+# Copyright (C) 2020 unnamed project
+# This file is distributed under the same license as the unnamed project package.
+msgid ""
+msgstr ""
+"Project-Id-Version: unnamed project\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/Bootstrap.php:48
+msgid "%1$s requiert au moins la version %2$s de PHP pour fonctionner. Vous avez la version %3$s. Veuillez voir %4$s pour plus d'information information."
+msgstr ""
+
+#: src/PluginData.php:93
+msgctxt "Nom du plugin à afficher"
+msgid "Extend REST API Post"
+msgstr ""
+
+#: src/Admin/Settings/Main.php:141
+msgid "Vous n'avez pas les permissions suffisantes pour accéder à cette page."
+msgstr ""
+
+#: src/Common/Settings/Main.php:100
+msgid "Options"
+msgstr ""
+
+#: src/Common/Settings/Main.php:232
+msgid "Ces réglages vous permettent d'ajouter l'URL de l'image à la une, le nom de l'auteur et l'URL de son avatar au retour de l'API REST pour tous les types de post public."
+msgstr ""
+
+#: src/Common/Settings/Main.php:273
+msgid "Nom de l'auteur"
+msgstr ""
+
+#: src/Common/Settings/Main.php:282
+msgid "Avatar de l'auteur"
+msgstr ""
+
+#: src/Common/Settings/Main.php:291
+msgid "Image à la une"
+msgstr ""

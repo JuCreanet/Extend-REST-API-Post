@@ -45,7 +45,7 @@ if ( ! class_exists( Bootstrap::class ) ) {
 
 			$message = sprintf(
 				// traductions: 1: nom à afficher du plugin, 2: version minimum de PHP requise, 3: version courante de PHP, lien aide
-				__( '%1$s requires at least PHP version %2$s in order to work. You have version %3$s. Please see %4$s for more information.', 'extend-rest-api-post' ),
+				__( '%1$s requiert au moins la version %2$s de PHP pour fonctionner. Vous avez la version %3$s. Veuillez voir %4$s pour plus d\'information information.', 'extend-rest-api-post' ),
 				'<strong>' . PluginData::get_plugin_display_name() . '</strong>',
 				'<strong>' . PluginData::required_min_php_version() . '</strong>',
 				'<strong>' . PHP_VERSION . '</strong>',

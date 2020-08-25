@@ -1,6 +1,6 @@
 {
   "name": "extend-rest-api-post",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Plugin WordPress qui étend l'API REST pour permettre d'ajouter le nom de l'auteur, son avatar, et l'image à la une au json des types de postplugin WordPress qui ajoute une interface au tableau de bord pour pouvoir ajouter le nom de l'auteur, l'URL de son avatar et les URL de l'image à la une dans le retour de l'API REST pour chaque type de post publique",
   "main": "index.js",
   "scripts": {

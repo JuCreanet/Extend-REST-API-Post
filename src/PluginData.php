@@ -21,7 +21,7 @@ if ( ! class_exists( PluginData::class ) ) {
 		 * @return string
 		 */
 		public static function plugin_version(): string {
-			return '1.1.0';
+			return '1.1.1';
 		}
 
 		/**
@@ -90,7 +90,7 @@ if ( ! class_exists( PluginData::class ) ) {
 		 * @return string
 		 */
 		public static function get_plugin_display_name(): string {
-			return esc_html_x( 'Extend REST API Post', 'Plugin name for display', 'extend-rest-api-post' );
+			return esc_html_x( 'Extend REST API Post', 'Nom du plugin à afficher', 'extend-rest-api-post' );
 		}
 
 		/**

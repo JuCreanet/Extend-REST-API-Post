@@ -6,7 +6,7 @@ Tags: REST API, Admin UI, composer
 Requires at least: 5.2
 Tested up to: 5.3.2
 Requires PHP: 7.1.0
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPL version 3 or any later version
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,10 @@ Pour compiler le css (en mode minifié), lancer dans la console `npm run sass` e
 7.  Accéder à l'interface par le menu du tableau de bord sous >> Réglages >> Extend REST API Post
 
 == Changelog ==
+
+= 1.1.1 =
+* 25 août 2020
+* Internationalisation
 
 = 1.1.0 =
 * 25 août 2020

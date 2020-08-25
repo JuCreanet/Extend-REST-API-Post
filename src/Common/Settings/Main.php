@@ -229,7 +229,7 @@ if ( ! class_exists( Main::class ) ) {
 		 * @return void
 		 */
 		public function callback_section_rest_options() {
-    		echo '<p>Ces réglages vous permettent d\'ajouter l\'URL de l\'image à la une, le nom de l\'auteur et l\'URL de son avatar au retour de l\'API REST pour tous les types de post public.</p>';
+    		echo '<p>'._e('Ces réglages vous permettent d\'ajouter l\'URL de l\'image à la une, le nom de l\'auteur et l\'URL de son avatar au retour de l\'API REST pour tous les types de post public.', 'extend-rest-api-post').'</p>';
 		}
 
 		/**
@@ -270,7 +270,7 @@ if ( ! class_exists( Main::class ) ) {
 	                                $checked = 'checked';
 	                            }
 	                            echo '<div class="erap_custom_field"> <input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_author_name . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_author_name . ']" type="checkbox" value="' . $post_author_name . '"' . $checked . '></div> ';
-	                            echo '<h4 class="erap_cf_title"> Nom de l\'auteur </h4>';                            
+	                            echo '<h4 class="erap_cf_title">'._e( 'Nom de l\'auteur', 'extend-rest-api-post' ).'</h4>';                            
 
 	                            // Check-box pour l'avatar de l'auteur
 	                            $post_author_avatar = $post_type . '_author_avatar';
@@ -279,7 +279,7 @@ if ( ! class_exists( Main::class ) ) {
 	                                $checked = 'checked';
 	                            }
 	                            echo '<div class="erap_custom_field"> <input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_author_avatar . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_author_avatar . ']" type="checkbox" value="' . $post_author_avatar . '"' . $checked . '></div> ';
-	                            echo '<h4 class="erap_cf_title"> Avatar de l\'auteur </h4>';                            
+	                            echo '<h4 class="erap_cf_title">'. _e( 'Avatar de l\'auteur', 'extend-rest-api-post' ).'</h4>';                            
 
 	                            // Check-box pour l'image à la une
 	                            $post_featured_image = $post_type . '_featured_image';
@@ -288,7 +288,7 @@ if ( ! class_exists( Main::class ) ) {
 	                                $checked = 'checked';
 	                            }
 	                            echo '<div class="erap_custom_field"> <input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_featured_image . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_featured_image . ']" type="checkbox" value="' . $post_featured_image . '"' . $checked . '></div> ';
-	                            echo '<h4 class="erap_cf_title"> Image à la une </h4>';
+	                            echo '<h4 class="erap_cf_title">'. _e( 'Image à la une', 'extend-rest-api-post' ).'</h4>';
 	                        ?>
 	                    </div>
 	                </div>

@@ -22,6 +22,9 @@ L'accès à l'interface se fait par le menu du tableau de bord sous >> Réglages
 
 Extend REST API Post est distribué sous licence GNU GPL3.
 
+### 1.1.1
+* Internationalisation
+
 ### 1.1.0
 * SASS
 

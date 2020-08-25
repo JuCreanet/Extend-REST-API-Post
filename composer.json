@@ -1,0 +1,39 @@
+{
+"name": "JuCreanet/extend-rest-api-post",
+	"description": "Ajoute une page au tableau de bord pour pouvoir ajouter le nom de l'auteur, l'URL de son avatar et l'URL de l'image à la une dans le retour de l'API REST pour chaque type de post publique.",
+	"type": "wordpress-plugin",
+	"license": "GPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Julia Galindo",
+			"email": "julia@creanet.fr",
+			"homepage": "https://creanet.fr",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=7.1.0",
+		"composer/installers": "~1.0"
+	},
+	"minimum-stability": "stable",
+	"archive": {
+		"exclude": [
+			"*",
+			".*",
+			"*/",
+			"!vendor/*",
+			"!languages/*",
+			"!*.php",
+			"!*.txt"
+		]
+	},
+	"autoload": {
+		"psr-4": {
+			"Erap\\": "src/"
+		}
+	},
+	"config": {
+		"archive-format": "zip",
+		"optimize-autoloader": true
+	}
+}

@@ -59,25 +59,18 @@ if ( ! class_exists( Posts::class ) ) {
 		}
 
 		/**
-		 * Récupération de tous les types de post trié par ordre alphabétique de label
+		 * Récupération de tous les types de post trié par ordre alphabétique
 		 *
 		 * @see get_post_types()
 		 *
 		 * @return array
 		 */
 		public function get_public_post_types() {
-			$args = array(
-				        'public' => true, // seulement les types de post publiques
-				        '_builtin' => false, // sans les types de post natifs
-			);			
-			$result = get_post_types( $args, 'names' );
-		    // ajout des articles et des pages
-		    $result['post'] = 'post';
-		    $result['page'] = 'page';
+			$result = get_post_types( [ 'public' => true ], 'object' );
 
 			uasort(
 				$result, function ( $a, $b ) {
-				return strcmp( $a, $b );
+				return strcmp( $a->label, $b->label );
 			}
 			);
 

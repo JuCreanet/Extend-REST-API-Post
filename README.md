@@ -2,8 +2,9 @@
 
 Extend REST API Post est un plugin WordPress qui ajoute une interface au tableau de bord pour pouvoir ajouter le nom de l'auteur, l'URL de son avatar et les URL de l'image à la une dans le retour de l'API REST pour chaque type de post publique.
 Le plugin est développé en objet et utilise autoload avec des namespaces PHP. Les dépendances sont gérées avec composer.
+Une notification de mise à jour apparait dans le tableau de bord avec mise à jour en un clic.
 Pour compiler le css (en mode minifié), lancer dans la console `npm run sass` et enregistrer les modifications dans assets/sass/main.scss
-
+Pour générer le fichier .pot, lancer dans la console `npm run pot`
 
 ## Installation
 
@@ -21,6 +22,9 @@ L'accès à l'interface se fait par le menu du tableau de bord sous >> Réglages
 ## License
 
 Extend REST API Post est distribué sous licence GNU GPL3.
+
+### 1.2.0
+* Notification mise à jour
 
 ### 1.1.1
 * Internationalisation

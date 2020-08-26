@@ -92,7 +92,7 @@ if ( ! class_exists( Main::class ) ) {
 		}
 
 		/**
-		 * Le texte traductible "Settings".
+		 * Le texte traductible "Options".
 		 *
 		 * @return string
 		 */
@@ -112,40 +112,7 @@ if ( ! class_exists( Main::class ) ) {
 		}
 
 		/**
-		 * Une simple option de la base de données en "string" avec une valeur par défaut optionnelle.
-		 *
-		 * @param string $key
-		 * @param string $default
-		 *
-		 * @return string
-		 */
-		public function get_option_as_string( string $key, string $default = '' ): string {
-			$result = $this->get_option( $key, $default );
-
-			return $result;
-		}
-
-		/**
-		 * Une simple option de la base de données brute avec une valeur par défaut optionnelle.
-		 *
-		 * @param string $key
-		 * @param mixed  $default
-		 *
-		 * @return mixed
-		 */
-		public function get_option( string $key, $default = '' ) {
-			$all_options = $this->get_all_options();
-
-			// On ne peut pas utiliser empty() car une checkbox non cochée est boolean false, par exemple.
-			if ( isset( $all_options[ $key ] ) ) {
-				return $all_options[ $key ];
-			} else {
-				return $default;
-			}
-		}
-
-		/**
-		 * Toutes les options sauvegardées de la base de données.
+		 * Toutes les options sauvegardées par ce plugin dans la base de données.
 		 *
 		 * @return array
 		 */
@@ -159,27 +126,6 @@ if ( ! class_exists( Main::class ) ) {
 			}
 		}
 
-		/**
-		 * Une simple option de la base de données en "array" avec une valeur par défaut optionnelle.
-		 *
-		 * @param string $key
-		 * @param mixed  $default
-		 *
-		 * @return array
-		 */
-		public function get_option_as_array( string $key, $default = '' ): array {
-			$result = $this->get_option( $key, $default );
-
-			if ( is_string( $result ) ) {
-				$result = json_decode( $result, true );
-			}
-
-			$result = (array) $result;
-
-			$result = array_keys( $result );
-
-			return $result;
-		}
 
 		/**
 		 * Suppression de toutes les options de la base de données.
@@ -250,11 +196,9 @@ if ( ! class_exists( Main::class ) ) {
 	                    <a href="#">
 	                        <?php
 	                            // Récupération du nom du type de post pour afficher en titre
-	                            $post_type_obj = get_post_type_object($post_type);
-	                            $post_type_singular_name = $post_type_obj->labels->singular_name;
-	                            $post_type_capitalized_name = ucwords(strtolower($post_type_singular_name));
-	                            if ($post_type == 'page' || $post_type == 'post') {                            
-	                                echo '<label class="erap_label"><span class="dashicons '.$post_type_obj->menu_icon.'"></span> ' . $post_type_capitalized_name . '</label>';                                
+	                            $post_type_capitalized_name = ucwords(strtolower($post_type->labels->singular_name));
+	                            if ($post_type->_builtin) {                            
+	                                echo '<label class="erap_label"><span class="dashicons '.$post_type->menu_icon.'"></span> ' . $post_type_capitalized_name . '</label>';                                
 	                            } else {
 	                                echo '<label class="erap_label"><span class="dashicons dashicons-admin-generic"></span> ' . $post_type_capitalized_name . ' (custom)</label>';
 	                            }
@@ -264,7 +208,7 @@ if ( ! class_exists( Main::class ) ) {
 	                    <div class="content" style="margin: 0; padding: 1em;">
 	                        <?php
 	                            // Check-box pour le nom de l'auteur
-	                            $post_author_name = $post_type . '_author_name';
+	                            $post_author_name = $post_type->name . '_author_name';
 	                            $checked = '';
 	                            if (is_array($options) && array_key_exists($post_author_name, $options)) {
 	                                $checked = 'checked';
@@ -273,7 +217,7 @@ if ( ! class_exists( Main::class ) ) {
 	                            echo '<h4 class="erap_cf_title">'._e( 'Nom de l\'auteur', 'extend-rest-api-post' ).'</h4>';                            
 
 	                            // Check-box pour l'avatar de l'auteur
-	                            $post_author_avatar = $post_type . '_author_avatar';
+	                            $post_author_avatar = $post_type->name . '_author_avatar';
 	                            $checked = '';
 	                            if (is_array($options) && array_key_exists($post_author_avatar, $options)) {
 	                                $checked = 'checked';
@@ -281,14 +225,16 @@ if ( ! class_exists( Main::class ) ) {
 	                            echo '<div class="erap_custom_field"> <input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_author_avatar . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_author_avatar . ']" type="checkbox" value="' . $post_author_avatar . '"' . $checked . '></div> ';
 	                            echo '<h4 class="erap_cf_title">'. _e( 'Avatar de l\'auteur', 'extend-rest-api-post' ).'</h4>';                            
 
-	                            // Check-box pour l'image à la une
-	                            $post_featured_image = $post_type . '_featured_image';
-	                            $checked = '';
-	                            if (is_array($options) && array_key_exists($post_featured_image, $options)) {
-	                                $checked = 'checked';
-	                            }
-	                            echo '<div class="erap_custom_field"> <input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_featured_image . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_featured_image . ']" type="checkbox" value="' . $post_featured_image . '"' . $checked . '></div> ';
-	                            echo '<h4 class="erap_cf_title">'. _e( 'Image à la une', 'extend-rest-api-post' ).'</h4>';
+		                        // Check-box pour l'image à la une si nécessaire
+	                            if (post_type_supports($post_type->name,'thumbnail')){
+		                            $post_featured_image = $post_type->name . '_featured_image';
+		                            $checked = '';
+		                            if (is_array($options) && array_key_exists($post_featured_image, $options)) {
+		                                $checked = 'checked';
+		                            }
+		                            echo '<div class="erap_custom_field"> <input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_featured_image . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_featured_image . ']" type="checkbox" value="' . $post_featured_image . '"' . $checked . '></div> ';
+		                            echo '<h4 class="erap_cf_title">'. _e( 'Image à la une', 'extend-rest-api-post' ).'</h4>';
+		                        }
 	                        ?>
 	                    </div>
 	                </div>
@@ -299,6 +245,8 @@ if ( ! class_exists( Main::class ) ) {
 
 		/**
 		 * Enregistrement des paramètres.
+		 *
+		 * Ajoute une ligne dans wp_options avec option_name = erap__options et les paramètres dans option_value
 		 *
 		 * @link https://developer.wordpress.org/reference/functions/register_setting/
 		 * @link https://developer.wordpress.org/rest-api/reference/settings/
@@ -326,16 +274,22 @@ if ( ! class_exists( Main::class ) ) {
 		    );
 		}
 
-		public function register_api_settings() {
+		/**
+		 * Extension de l'API
+		 *
+		 * Ajoute pour chaque type de post les infos sélectionnées
+		 *
+		 */
+		 public function register_api_settings() {
 			$options=$this->get_all_options();
 
  		   // Boucle sur chaque type de post
 		    foreach ($this->uposts->get_public_post_types() as $post_type) {
 
 		        // ajout des données auteur à l'API si les options ont été choisies
-		        $post_author_name = $post_type . '_author_name';
+		        $post_author_name = $post_type->name . '_author_name';
 		        if (is_array($options) && array_key_exists($post_author_name, $options)) {
-		            register_rest_field($post_type,
+		            register_rest_field($post_type->name,
 		                'author_name',
 		                array(
 		                    'get_callback' => [$this->uposts,'get_author_name'],
@@ -344,9 +298,9 @@ if ( ! class_exists( Main::class ) ) {
 		                )
 		            );
 		        }
-		       $post_author_avatar = $post_type . '_author_avatar';
+		       $post_author_avatar = $post_type->name . '_author_avatar';
 		        if (is_array($options) && array_key_exists($post_author_avatar, $options)) {
-		            register_rest_field($post_type,
+		            register_rest_field($post_type->name,
 		                'author_avatar',
 		                array(
 		                    'get_callback' => [$this->uposts,'get_author_avatar'],
@@ -357,9 +311,9 @@ if ( ! class_exists( Main::class ) ) {
 		        }
 
 		        // ajout de l'image à la une à l'API si l'option a été choisie
-		        $post_featured_image = $post_type . '_featured_image';
+		        $post_featured_image = $post_type->name . '_featured_image';
 		        if (is_array($options) && array_key_exists($post_featured_image, $options)) {
-		            register_rest_field($post_type,
+		            register_rest_field($post_type->name,
 		                'featured_image',
 		                array(
 		                    'get_callback' => [$this->uposts,'get_featured_image'],

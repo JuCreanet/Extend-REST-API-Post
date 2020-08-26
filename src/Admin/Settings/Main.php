@@ -73,7 +73,7 @@ if ( ! class_exists( Main::class ) ) {
 		}
 
 		/**
-		 * Enregistrement des scripts pour la page de paramètres du plugin.
+		 * Enregistrement des scripts pour la page d'interface du plugin.
 		 */
 		public function enqueue_settings_page_assets() {
 			// CSS pour la page des options.
@@ -145,7 +145,7 @@ if ( ! class_exists( Main::class ) ) {
 			<h1><?php echo PluginData::get_plugin_display_name(); ?></h1>
 			<form action="options.php" method="post">
 			<?php
-                settings_fields('erap__options');
+                settings_fields($this->settings->get_prefixed_option_key( 'options' ));
                 do_settings_sections($this->settings->get_settings_page_slug());
                 submit_button();
             ?>

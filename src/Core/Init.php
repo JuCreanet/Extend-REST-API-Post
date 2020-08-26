@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( Init::class ) ) {
 	/**
 	 * La classe du coeur du plugin.
-	 * Defini l'internationalisation, les hooks spécifiques à l'admin, et les hook pour la partie publique du site hooks.
+	 * Defini l'internationalisation, les hooks spécifiques à l'admin, et les hooks pour les parties communes du site.
 	 */
 	class Init {
 
 		/**
-		 * Le loader responsable de maintenir et enregistrer tous les hooks dont se sert le plugin
+		 * Le loader   responsable de maintenir et enregistrer tous les hooks dont se sert le plugin
 		 *
 		 * @var      Loader $loader Maintient et enregistre tous les hooks pour le plugin.
 		 */
@@ -36,12 +36,12 @@ if ( ! class_exists( Init::class ) ) {
 		}
 
 		/**
-		 * Charge les dépendances requises suivantes plugin.
+		 * Charge les dépendances requises suivantes.
 		 *
 		 * - Loader - gère les hooks du plugin.
 		 * - I18n - Defini la fonctionnalité d'internationalisation.
-		 * - Admin - Défini tous les hook de l'admin.
-		 * - Frontend - Défini tous les hook de la partie publique du site.
+		 * - Admin - Défini tous les hooks de l'admin.
+		 * - Common - Défini tous les hooks communs à l'admin et au site.
 		 */
 		private function load_dependencies(): void {
 			$this->loader = new Loader();
@@ -68,7 +68,7 @@ if ( ! class_exists( Init::class ) ) {
 			/**
 			 * Si on n'utilise pas le hook 'rest_api_init', on n'aura pas accès au types de post custom
 			 * même si 'show_in_rest' = true. C'est aussi pourquoi l'enregistrement des paramètres
-			 * ne peut pas être fait que si is_admin().
+			 * ne peut pas être fait après une vérification si is_admin().
 			 */
 			$this->loader->add_action( 'admin_init', $settings, 'register_settings' );
 			$this->loader->add_action( 'rest_api_init', $settings, 'register_api_settings' );

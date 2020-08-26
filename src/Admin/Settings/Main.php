@@ -135,6 +135,11 @@ if ( ! class_exists( Main::class ) ) {
 
 		/**
 		 * Affiche le HTML pour la page des options.
+		 *
+		 * @link https://developer.wordpress.org/reference/functions/settings_fields/
+		 * @link https://developer.wordpress.org/reference/functions/do_settings_sections/
+		 * @link https://developer.wordpress.org/reference/functions/submit_button/
+		 * 
 		 */
 		public function settings_page(): void {
 			if ( ! current_user_can( 'manage_options' ) ) {

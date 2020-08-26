@@ -172,6 +172,8 @@ if ( ! class_exists( Main::class ) ) {
 		 * Affiche les informations pour la page des options
 		 * callback: Rest API Section
 		 *
+		 * @see register_settings()
+		 *
 		 * @return void
 		 */
 		public function callback_section_rest_options() {
@@ -181,6 +183,8 @@ if ( ! class_exists( Main::class ) ) {
 		/**
 		 * Affiche les accordéons
 		 * callback: checkbox field
+		 *
+		 * @see register_settings()
 		 *
 		 * @return void
 		 */
@@ -279,6 +283,7 @@ if ( ! class_exists( Main::class ) ) {
 		 *
 		 * Ajoute pour chaque type de post les infos sélectionnées
 		 *
+		 * @link https://developer.wordpress.org/reference/functions/register_rest_field/
 		 */
 		 public function register_api_settings() {
 			$options=$this->get_all_options();

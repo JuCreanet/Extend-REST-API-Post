@@ -19,6 +19,8 @@
 */
 namespace Erap;
 
+// Vérification de nouvelle version disponible => création alerte et lien mise à jour en 1 clic
+// On échappe la classe car elle n'appartient pas au namespace
 require 'vendor/yahnis-elsts/plugin-update-checker/plugin-update-checker.php';
 $erapUpdateChecker = \Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/JuCreanet/Extend-REST-API-Post/',

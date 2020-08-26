@@ -13,7 +13,7 @@ if ( ! class_exists( Deactivator::class ) ) {
 	 *
 	 * Cette classe défini tous les codes à effectuer pendant la désactivation du plugin.
 	 * pour l'utiliser ajouter 'register_deactivation_hook( __FILE__, [ __NAMESPACE__ . '\Core\Deactivator', 'deactivate' ] );'
-	 * dans extend_rest_api_post.php
+	 * dans le fichier php principal du plugin.
 	 *
 	 **/
 	class Deactivator {

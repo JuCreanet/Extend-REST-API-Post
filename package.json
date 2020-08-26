@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./assets/sass/main.scss:./assets/css/style.css --style compressed",
-    "pot": "wp-pot --dest-file 'languages/extend_rest_api_post.pot' --package 'Extend REST API Post'"
+    "pot": "wp-pot --dest-file 'languages/extend-rest-api-post.pot' --package 'Extend REST API Post'"
   },
   "repository": {
     "type": "git",

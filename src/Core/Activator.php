@@ -13,7 +13,7 @@ if ( ! class_exists( Activator::class ) ) {
 	 *
 	 * Cette classe défini tous les codes à effectuer pendant l'activation du plugin.
 	 * pour l'utiliser ajouter 'register_activation_hook( __FILE__, [ __NAMESPACE__ . '\Core\Activator', 'activate' ] );'
-	 * dans extend_rest_api_post.php
+	 * dans le fichier php principal du plugin.
 	 *
 	 **/
 	class Activator {

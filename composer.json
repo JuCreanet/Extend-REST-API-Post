@@ -35,5 +35,8 @@
 	"config": {
 		"archive-format": "zip",
 		"optimize-autoloader": true
+	},
+	"require": {
+		"yahnis-elsts/plugin-update-checker" : "4.*"
 	}
 }

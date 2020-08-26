@@ -26,7 +26,6 @@ if ( ! class_exists( Bootstrap::class ) ) {
 		 */
 		public function init(): ?self {
 			$plugin = new self();
-
 			if ( $plugin->is_ready() ) {
 				$core = new Core\Init();
 				$core->run();

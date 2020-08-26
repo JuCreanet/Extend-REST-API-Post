@@ -20,18 +20,17 @@ et les URL de l'image à la une dans le retour de l'API REST pour chaque type de
 */
 namespace Erap;
 
+require 'vendor/yahnis-elsts/plugin-update-checker/plugin-update-checker.php';
+$erapUpdateChecker = \Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/JuCreanet/Extend-REST-API-Post/',
+	__FILE__,
+	'extend-rest-api-post'
+);
+
 // exit si accès direct
 if (!defined('ABSPATH')) {
     exit;
 }
-
-// vérification de mise à jour disponible
-require 'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/JuCreanet/Extend-REST-API-Post',
-	__FILE__,
-	'extend-rest-api-post'
-);
 
 // Autoload via Composer
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {

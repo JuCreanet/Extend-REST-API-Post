@@ -205,7 +205,7 @@ if ( ! class_exists( Main::class ) ) {
 	                        ?>
 	                        <i class="dashicons dashicons-arrow-down-alt2" ></i>
 	                    </a>
-	                    <div class="content" style="margin: 0; padding: 1em;">
+	                    <div class="content">
 	                        <?php
 	                            // Check-box pour le nom de l'auteur
 	                            $post_author_name = $post_type->name . '_author_name';
@@ -213,7 +213,7 @@ if ( ! class_exists( Main::class ) ) {
 	                            if (is_array($options) && array_key_exists($post_author_name, $options)) {
 	                                $checked = 'checked';
 	                            }
-	                            echo '<div class="erap_custom_field"> <input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_author_name . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_author_name . ']" type="checkbox" value="' . $post_author_name . '"' . $checked . '></div> ';
+	                            echo '<div class="erap_custom_field"> <label class="switch"><input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_author_name . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_author_name . ']" type="checkbox" value="' . $post_author_name . '"' . $checked . '><span class="slider round"></span></label></div> ';
 	                            echo '<h4 class="erap_cf_title">'._e( 'Nom de l\'auteur', 'extend-rest-api-post' ).'</h4>';                            
 
 	                            // Check-box pour l'avatar de l'auteur
@@ -222,7 +222,7 @@ if ( ! class_exists( Main::class ) ) {
 	                            if (is_array($options) && array_key_exists($post_author_avatar, $options)) {
 	                                $checked = 'checked';
 	                            }
-	                            echo '<div class="erap_custom_field"> <input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_author_avatar . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_author_avatar . ']" type="checkbox" value="' . $post_author_avatar . '"' . $checked . '></div> ';
+	                            echo '<div class="erap_custom_field"> <label class="switch"><input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_author_avatar . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_author_avatar . ']" type="checkbox" value="' . $post_author_avatar . '"' . $checked . '><span class="slider round"></span></label></div> ';
 	                            echo '<h4 class="erap_cf_title">'. _e( 'Avatar de l\'auteur', 'extend-rest-api-post' ).'</h4>';                            
 
 		                        // Check-box pour l'image à la une si nécessaire
@@ -232,7 +232,7 @@ if ( ! class_exists( Main::class ) ) {
 		                            if (is_array($options) && array_key_exists($post_featured_image, $options)) {
 		                                $checked = 'checked';
 		                            }
-		                            echo '<div class="erap_custom_field"> <input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_featured_image . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_featured_image . ']" type="checkbox" value="' . $post_featured_image . '"' . $checked . '></div> ';
+		                            echo '<div class="erap_custom_field"> <label class="switch"><input id="'.$this->get_prefixed_option_key( 'options' ).'_' . $post_featured_image . '" name="'.$this->get_prefixed_option_key( 'options' ).'[' . $post_featured_image . ']" type="checkbox" value="' . $post_featured_image . '"' . $checked . '><span class="slider round"></span></label></div> ';
 		                            echo '<h4 class="erap_cf_title">'. _e( 'Image à la une', 'extend-rest-api-post' ).'</h4>';
 		                        }
 	                        ?>

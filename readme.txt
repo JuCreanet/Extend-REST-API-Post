@@ -5,7 +5,7 @@ Tags: REST API, Admin UI, composer
 Requires at least: 5.2
 Tested up to: 5.5
 Requires PHP: 7.1.0
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPL version 3 or any later version
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,9 +31,15 @@ Pour générer le fichier .pot, lancer dans la console `npm run pot`
 
 == Changelog ==
 
+= 1.2.1 =
+* 26 août 2020
+* Responsive
+* Toggle
+
 = 1.2.0 =
 * 26 août 2020
 * Notification mise à jour
+* Clean code
 
 = 1.1.1 =
 * 25 août 2020

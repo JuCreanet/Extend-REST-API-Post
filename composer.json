@@ -1,5 +1,5 @@
 {
-"name": "JuCreanet/extend-rest-api-post",
+"name": "jucreanet/extend-rest-api-post",
 	"description": "Ajoute une page au tableau de bord pour pouvoir ajouter le nom de l'auteur, l'URL de son avatar et l'URL de l'image à la une dans le retour de l'API REST pour chaque type de post publique.",
 	"type": "wordpress-plugin",
 	"license": "GPL-3.0-or-later",

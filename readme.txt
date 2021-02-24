@@ -31,6 +31,10 @@ Pour générer le fichier .pot, lancer dans la console `npm run pot`
 
 == Changelog ==
 
+= 1.2.2 =
+* 24 février 2020
+* Objectifseo
+
 = 1.2.1 =
 * 26 août 2020
 * Responsive

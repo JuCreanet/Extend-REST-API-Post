@@ -9,7 +9,7 @@
 * Plugin Name:  Extend REST API Post
 * Plugin URI:  https://github.com/JuCreanet/Extend-REST-API-Post
 * Description:  Ajoute une page au tableau de bord pour pouvoir étendre l'API REST
-* Version:      1.2.1
+* Version:      1.2.2
 * Author:       Julia Galindo
 * Author URI:   https://www.objectifseo.fr/
 * Text Domain:  extend-rest-api-post

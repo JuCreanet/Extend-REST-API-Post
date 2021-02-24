@@ -11,7 +11,7 @@
 * Description:  Ajoute une page au tableau de bord pour pouvoir étendre l'API REST
 * Version:      1.2.1
 * Author:       Julia Galindo
-* Author URI:   https://www.creanet.fr/
+* Author URI:   https://www.objectifseo.fr/
 * Text Domain:  extend-rest-api-post
 * Domain Path:  /languages
 * License:      GPL3
